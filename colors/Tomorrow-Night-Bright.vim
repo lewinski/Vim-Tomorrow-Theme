@@ -4,10 +4,10 @@
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
-let s:foreground = "eaeaea"
 let s:background = "000000"
-let s:selection = "424242"
 let s:line = "2a2a2a"
+let s:selection = "424242"
+let s:foreground = "eaeaea"
 let s:comment = "969896"
 let s:red = "d54e53"
 let s:orange = "e78c45"
@@ -16,6 +16,7 @@ let s:green = "b9ca4a"
 let s:aqua = "70c0b1"
 let s:blue = "7aa6da"
 let s:purple = "c397d8"
+let s:window = "4d5057"
 
 set background=dark
 hi clear
