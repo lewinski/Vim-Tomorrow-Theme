@@ -16,7 +16,7 @@ let s:green = "718c00"
 let s:aqua = "3e999f"
 let s:blue = "4271ae"
 let s:purple = "8959a8"
-let s:window = "4d5057"
+let s:window = "cccccc"
 
 set background=light
 hi clear
@@ -239,8 +239,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
-	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
-	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
+	call <SID>X("StatusLine", s:window, s:foreground, "reverse")
+	call <SID>X("StatusLineNC", s:window, s:comment, "reverse")
+	call <SID>X("User1", s:window, s:orange, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
