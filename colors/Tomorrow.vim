@@ -4,10 +4,10 @@
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
-let s:background = "ffffff"
-let s:line = "efefef"
-let s:selection = "d6d6d6"
 let s:foreground = "4d4d4c"
+let s:background = "fafafa"
+let s:selection = "d6d6d6"
+let s:line = "efefef"
 let s:comment = "8e908c"
 let s:red = "c82829"
 let s:orange = "f5871f"
@@ -237,7 +237,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("LineNr", s:selection, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:background, s:yellow, "")
+	call <SID>X("Search", s:foreground, s:yellow, "")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLine", s:window, s:foreground, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:comment, "reverse")
@@ -257,6 +257,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("CursorColumn", "", s:line, "none")
 		call <SID>X("PMenu", s:foreground, s:selection, "none")
 		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
+		call <SID>X("SignColumn", "", s:background, "none")
 	end
 	if version >= 703
 		call <SID>X("ColorColumn", "", s:line, "none")
@@ -315,7 +316,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonInclude", s:purple, "", "")
 	call <SID>X("pythonStatement", s:purple, "", "")
 	call <SID>X("pythonConditional", s:purple, "", "")
+	call <SID>X("pythonRepeat", s:purple, "", "")
+	call <SID>X("pythonException", s:purple, "", "")
 	call <SID>X("pythonFunction", s:blue, "", "")
+
+	" CoffeeScript Highlighting
+	call <SID>X("coffeeKeyword", s:purple, "", "")
+	call <SID>X("coffeeConditional", s:purple, "", "")
 
 	" JavaScript Highlighting
 	call <SID>X("javaScriptBraces", s:foreground, "", "")
@@ -325,9 +332,21 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")
 
+	" HTML Highlighting
+	call <SID>X("htmlTag", s:red, "", "")
+	call <SID>X("htmlTagName", s:red, "", "")
+	call <SID>X("htmlArg", s:red, "", "")
+	call <SID>X("htmlScriptTag", s:red, "", "")
+
 	" Diff Highlighting
 	call <SID>X("diffAdded", s:green, "", "")
 	call <SID>X("diffRemoved", s:red, "", "")
+
+	" ShowMarks Highlighting
+	call <SID>X("ShowMarksHLl", s:orange, s:background, "none")
+	call <SID>X("ShowMarksHLo", s:purple, s:background, "none")
+	call <SID>X("ShowMarksHLu", s:yellow, s:background, "none")
+	call <SID>X("ShowMarksHLm", s:aqua, s:background, "none")
 
 	" Delete Functions
 	delf <SID>X
