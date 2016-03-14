@@ -18,6 +18,12 @@ let s:blue = "4271ae"
 let s:purple = "8959a8"
 let s:window = "cccccc"
 
+" Console 256 Colours
+if !has("gui_running")
+	let s:foreground = ""
+	let s:background = ""
+end
+
 set background=light
 hi clear
 syntax reset
